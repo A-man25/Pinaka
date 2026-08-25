@@ -1,69 +1,169 @@
-# Prerequisites
-*.d
+# ============================================================
+# PINAKA ENGINE
+# .gitignore
+# ============================================================
 
-# Compiled Object files
-*.slo
-*.lo
+
+# ------------------------------------------------------------
+# PINAKA Build Output
+# ------------------------------------------------------------
+
+# Intermediate compiler/build files
+obj/
+**/obj/
+
+# Final binaries
+bin/
+**/bin/
+
+
+# ------------------------------------------------------------
+# Visual Studio Cache
+# ------------------------------------------------------------
+
+# IMPORTANT:
+# We KEEP proj/vs/ because it contains our solution/project files.
+# We ONLY ignore Visual Studio's hidden .vs cache directory.
+
+.vs/
+**/.vs/
+
+
+# ------------------------------------------------------------
+# Visual Studio User-Specific Files
+# ------------------------------------------------------------
+
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+
+# ------------------------------------------------------------
+# Visual Studio Database / IntelliSense Files
+# ------------------------------------------------------------
+
+*.VC.db
+*.VC.VC.opendb
+*.opendb
+*.idb
+*.ipch
+*.vsidx
+
+
+# ------------------------------------------------------------
+# Compiler Object Files
+# ------------------------------------------------------------
+
 *.o
 *.obj
+*.lo
+*.slo
 
+
+# ------------------------------------------------------------
+# Dependency Files
+# ------------------------------------------------------------
+
+*.d
+
+
+# ------------------------------------------------------------
 # Precompiled Headers
-*.gch
-*.pch
+# ------------------------------------------------------------
 
-# Linker files
+*.pch
+*.gch
+
+
+# ------------------------------------------------------------
+# Visual Studio Build Intermediate Files
+# ------------------------------------------------------------
+
+*.tlog
+*.lastbuildstate
+*.recipe
 *.ilk
 
-# Debugger Files
+
+# ------------------------------------------------------------
+# Debug Symbols
+# ------------------------------------------------------------
+
 *.pdb
+*.dwo
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
+
+# ------------------------------------------------------------
+# Compiled Dynamic Libraries
+# ------------------------------------------------------------
+
 *.dll
+*.so
 *.so.*
+*.dylib
 
 
-# Fortran module files
-*.mod
-*.smod
+# ------------------------------------------------------------
+# Compiled Static / Import Libraries
+# ------------------------------------------------------------
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
 *.lib
+*.a
+*.la
+*.lai
 
+
+# ------------------------------------------------------------
 # Executables
+# ------------------------------------------------------------
+
 *.exe
 *.out
 *.app
 
-# Build directories
-build/
-Build/
-build-*/
 
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
+# ------------------------------------------------------------
+# Temporary Files
+# ------------------------------------------------------------
 
-# Temporary files
 *.tmp
 *.log
 *.bak
 *.swp
+*.~
 
-# vcpkg
+
+# ------------------------------------------------------------
+# Package Manager Generated Files
+# ------------------------------------------------------------
+
 vcpkg_installed/
 
-# debug information files
-*.dwo
 
-# test output & cache
+# ------------------------------------------------------------
+# Test / Cache Output
+# ------------------------------------------------------------
+
 Testing/
 .cache/
+
+
+# ============================================================
+# INTENTIONALLY TRACKED
+# ============================================================
+#
+# proj/vs/
+#     Pinaka.sln
+#     *.vcxproj
+#     *.vcxproj.filters
+#
+# build/
+#
+# thirdparty/
+#
+# Source files (.h/.hpp/.cpp)
+#
+# Premake scripts
+#
+# ============================================================

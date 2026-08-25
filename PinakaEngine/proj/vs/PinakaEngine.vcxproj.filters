@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pinaka">
+      <UniqueIdentifier>{79C025CA-6562-50A0-4E1D-64F43A5ED7F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Core">
+      <UniqueIdentifier>{711877E5-DDCD-EFDA-66C2-E9B1D276E6DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Core\Application">
+      <UniqueIdentifier>{B4858B82-20BD-D319-29C7-373D957DFA12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Foundation">
+      <UniqueIdentifier>{1FCFEFC8-8BE5-ED5E-D45C-798040B2BEE6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Foundation\Algorithms">
+      <UniqueIdentifier>{281253D3-14CD-427F-BD84-BBC9A91E8D0F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Foundation\Containers">
+      <UniqueIdentifier>{4480E207-303B-D2B3-D9F2-4AFEC58C1C44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="build">
+      <UniqueIdentifier>{D5562E0F-416B-56C0-0AED-F91F76C052F1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.h">
+      <Filter>Pinaka\Core\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Core\Core.h">
+      <Filter>Pinaka\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Core\PinakaEngineInc.h">
+      <Filter>Pinaka\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Algorithms\algorithm.h">
+      <Filter>Pinaka\Foundation\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.h">
+      <Filter>Pinaka\Foundation\Containers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
+      <Filter>Pinaka\Core\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Containers\Vector.cpp">
+      <Filter>Pinaka\Foundation\Containers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\build\src">
+      <Filter>build</Filter>
+    </None>
+  </ItemGroup>
+</Project>
