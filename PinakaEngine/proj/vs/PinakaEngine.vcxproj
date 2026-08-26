@@ -107,10 +107,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp" />
-    <ClCompile Include="..\..\src\Pinaka\Foundation\Containers\Vector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\build\src" />
+    <None Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

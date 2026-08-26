@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <math.h>
 #include <Windows.h>
+#include <utility>
 
 #include <vector>
 #include <string>
@@ -14,3 +15,4 @@
 #include <stack>
 
 #include "Core.h"
+#include "../Foundation/Containers/Vector.h"

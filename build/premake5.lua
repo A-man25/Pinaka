@@ -44,7 +44,8 @@ project "PinakaEngine"
         "src",
         "../PinakaEngine/src/**.h",
         "../PinakaEngine/src/**.hpp",
-        "../PinakaEngine/src/**.cpp"
+        "../PinakaEngine/src/**.cpp",
+        "../PinakaEngine/src/**.inl",
     }
 
     vpaths
@@ -110,7 +111,8 @@ project "PinakaStudio"
     {
         "../PinakaStudio/src/**.h",
         "../PinakaStudio/src/**.hpp",
-        "../PinakaStudio/src/**.cpp"
+        "../PinakaStudio/src/**.cpp",
+        "../PinakaStudio/src/**.inl",
     }
 
     vpaths
@@ -180,7 +182,8 @@ project "Tests"
     {
         "../Tests/src/**.h",
         "../Tests/src/**.hpp",
-        "../Tests/src/**.cpp"
+        "../Tests/src/**.cpp",
+        "../Tests/src/**.inl"
     }
 
     vpaths

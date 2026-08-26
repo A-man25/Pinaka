@@ -44,13 +44,13 @@
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
       <Filter>Pinaka\Core\Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Pinaka\Foundation\Containers\Vector.cpp">
-      <Filter>Pinaka\Foundation\Containers</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\build\src">
       <Filter>build</Filter>
+    </None>
+    <None Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl">
+      <Filter>Pinaka\Foundation\Containers</Filter>
     </None>
   </ItemGroup>
 </Project>
