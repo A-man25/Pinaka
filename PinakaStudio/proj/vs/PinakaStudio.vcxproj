@@ -97,6 +97,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\PkStudio\PinakaStudio.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\PkStudio\PinakaStudio.cpp" />
     <ClCompile Include="..\..\src\main\main.cpp" />
   </ItemGroup>
   <ItemGroup>

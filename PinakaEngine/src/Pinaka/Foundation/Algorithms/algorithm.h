@@ -22,5 +22,8 @@ namespace pke
 		static bool insertionSort(IntegerVector& ioVec);
 		static bool selectionSort(IntegerVector& ioVec);
 		static bool mergeSort(IntegerVector& ioVec);
+		static int findMaxValue(IntegerVector& ioVec);
+		static int findMinValue(IntegerVector& ioVec);
+
 	};
 }

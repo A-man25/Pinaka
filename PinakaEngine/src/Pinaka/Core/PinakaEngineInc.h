@@ -15,7 +15,8 @@
 #include <stack>
 
 #include "Core.h"
-#include "../Foundation/Containers/Vector.h"
+#include <Pinaka/Foundation/Containers/Vector.h>
+#include "Application/PinakaEngApp.h"
 
 
 /***********************************************************************

@@ -1,6 +1,5 @@
 #pragma once
-#include "../Core.h"
-
+#include <Pinaka/Core/PinakaEngineInc.h>
 
 namespace pke
 {
