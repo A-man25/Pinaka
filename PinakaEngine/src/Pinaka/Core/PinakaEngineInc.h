@@ -16,3 +16,9 @@
 
 #include "Core.h"
 #include "../Foundation/Containers/Vector.h"
+
+
+/***********************************************************************
+* TypeDefs
+***********************************************************************/
+typedef pke::Vector<int> IntegerVector;
