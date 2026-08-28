@@ -36,11 +36,11 @@ namespace pke
 		~SLinkedList();
 		SLinkedList& operator = (const SLinkedList& copy);
 		SLinkedList& operator = (SLinkedList&& iOther);
-
 		void pushback(const T& ivalue);
 		void pushfront(const T& ivalue);
-		void insertAt(const T& ivalue);
-		T& pop();
+		void insertAt(const T& ivalue, int index);
+		void clear();
+		T pop();
 		void removefirst();
 		void removeAt(int iIndex);
 		void reverse();
@@ -50,7 +50,6 @@ namespace pke
 		bool isEmpty() const;
 		T& at() const;
 		bool search(const T& ivalue);
-		void clear();
 
 	private:
 		Node<T>* m_pHead;

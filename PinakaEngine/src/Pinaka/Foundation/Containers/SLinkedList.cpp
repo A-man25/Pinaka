@@ -195,4 +195,57 @@ namespace pke
 		m_pHead = cursor;
 		m_Size++;
 	}
+
+	template <typename T>
+	void SLinkedList<T>::insertAt(const T& value, int index)
+	{
+		if (index < 0 ||index > m_Size)
+			throw std::out_of_range("index out of range");
+
+		if (index == 0)
+		{
+			this->pushfront(value);
+			return;
+		}
+		
+		Node<T>* cursor = m_pHead;
+
+		int curIndx = 0;
+		while (cursor->m_pNext && curIndx < index-1)
+		{
+			cursor = cursor->m_pNext;
+			curIndx++;
+		}
+
+		Node<T>* newNode = new Node<T>(value);
+		newNode->m_pNext = cursor->m_pNext;
+		cursor->m_pNext = newNode;
+		m_Size++;
+	}
+
+	template <typename T>
+	T SLinkedList<T>::pop()
+	{
+		if (!m_pHead)
+			throw std::runtime_error("head is null");
+
+		if (!m_pHead->m_pNext) 
+		{
+			T value = m_pHead->m_val;
+			delete m_pHead;
+			m_pHead = nullptr;
+			m_Size--;
+			return value;
+		}
+
+		Node<T>* curs = m_pHead;
+		while (curs->m_pNext->m_pNext)
+			curs = curs->m_pNext;
+
+		T value = curs->m_pNext->m_val;
+		delete curs->m_pNext;
+		curs->m_pNext = nullptr;
+		m_Size--;
+		return value;
+	}
 }
