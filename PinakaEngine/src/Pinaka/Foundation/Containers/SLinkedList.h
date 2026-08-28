@@ -20,7 +20,9 @@ namespace pke
 	{
 	public:
 		T m_val;
-		Node* m_pNext;
+		Node* m_pNext = nullptr;
+		Node() = default;
+		Node(T iVal) : m_val(iVal), m_pNext(nullptr) {}
 	};
 
 	template <typename T>
@@ -29,11 +31,12 @@ namespace pke
 	public:
 		SLinkedList() :m_pHead(nullptr), m_Size(0) {}
 		SLinkedList(std::initializer_list<T> list);
-		SLinkedList(const SLinkedList& iother);
+		SLinkedList(const SLinkedList& copy);
 		SLinkedList(SLinkedList&& iother);
 		~SLinkedList();
-		SLinkedList& operator = (const SLinkedList& iother) const;
-		SLinkedList operator = (SLinkedList&& iOther);
+		SLinkedList& operator = (const SLinkedList& copy);
+		SLinkedList& operator = (SLinkedList&& iOther);
+
 		void pushback(const T& ivalue);
 		void pushfront(const T& ivalue);
 		void insertAt(const T& ivalue);

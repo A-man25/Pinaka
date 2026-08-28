@@ -9,16 +9,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\PkStudio\PinakaStudio.h">
-      <Filter>PkStudio</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\PkStudio\PinakaStudio.cpp">
-      <Filter>PkStudio</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\main\main.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\PinakaStudio\PinakaStudio.cpp">
+      <Filter>PkStudio</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\PinakaStudio\PinakaStudio.h">
+      <Filter>PkStudio</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

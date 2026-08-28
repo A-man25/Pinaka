@@ -97,16 +97,16 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\PkStudio\PinakaStudio.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\PkStudio\PinakaStudio.cpp" />
     <ClCompile Include="..\..\src\main\main.cpp" />
+    <ClCompile Include="..\..\src\PinakaStudio\PinakaStudio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\PinakaEngine\proj\vs\PinakaEngine.vcxproj">
       <Project>{4F3AB1CA-3B9D-406F-E422-7925D0640CF2}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\PinakaStudio\PinakaStudio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

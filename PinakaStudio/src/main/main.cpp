@@ -1,4 +1,4 @@
-#include "../PkStudio/PinakaStudio.h"
+#include "../PinakaStudio/PinakaStudio.h"
 
 int main()
 {
