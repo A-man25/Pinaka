@@ -19,6 +19,12 @@
     <Filter Include="Pinaka\Foundation\Containers">
       <UniqueIdentifier>{4480E207-303B-D2B3-D9F2-4AFEC58C1C44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pinaka\Foundation\Math">
+      <UniqueIdentifier>{587FF7DD-4479-2030-2DE6-B640197F869C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Foundation\Memory">
+      <UniqueIdentifier>{A76D193A-9392-68BA-BCDD-4D4AA86167D8}</UniqueIdentifier>
+    </Filter>
     <Filter Include="build">
       <UniqueIdentifier>{D5562E0F-416B-56C0-0AED-F91F76C052F1}</UniqueIdentifier>
     </Filter>
@@ -36,27 +42,45 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Algorithms\algorithm.h">
       <Filter>Pinaka\Foundation\Algorithms</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.h">
+      <Filter>Pinaka\Foundation\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.inl">
+      <Filter>Pinaka\Foundation\Containers</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.h">
       <Filter>Pinaka\Foundation\Containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl">
       <Filter>Pinaka\Foundation\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.h">
-      <Filter>Pinaka\Foundation\Containers</Filter>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\LineSegment.h">
+      <Filter>Pinaka\Foundation\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h">
+      <Filter>Pinaka\Foundation\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.h">
+      <Filter>Pinaka\Foundation\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.inl">
+      <Filter>Pinaka\Foundation\Memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
       <Filter>Pinaka\Core\Application</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\LineSegment.cpp">
+      <Filter>Pinaka\Foundation\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point.cpp">
+      <Filter>Pinaka\Foundation\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\build\src">
       <Filter>build</Filter>
-    </None>
-    <None Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.inl">
-      <Filter>Pinaka\Foundation\Containers</Filter>
     </None>
   </ItemGroup>
 </Project>

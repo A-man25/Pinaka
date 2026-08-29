@@ -104,15 +104,21 @@
     <ClInclude Include="..\..\src\Pinaka\Core\PinakaEngineInc.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Algorithms\algorithm.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.h" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.inl" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\LineSegment.h" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.h" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp" />
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\LineSegment.cpp" />
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\build\src" />
-    <None Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
