@@ -15,6 +15,9 @@
 
 namespace pke
 {
+/************************************************************************
+* Class : Node 
+*************************************************************************/
 	template <typename T>
 	class Node
 	{
@@ -25,6 +28,26 @@ namespace pke
 		Node(T iVal) : m_val(iVal), m_pNext(nullptr) {}
 	};
 
+/************************************************************************
+* Class : Iterator
+*************************************************************************/
+	template <typename T>
+	class Iterator
+	{
+	private:
+		Node<T>* itr;
+	public:
+		Iterator(Node<T>* initr) : itr(initr) {}
+		T& operator*();
+		const T& operator*() const;
+		Iterator& operator ++ ();
+		bool operator == (const Iterator& other)const;
+		bool operator != (const Iterator& other)const;
+	};
+
+/************************************************************************
+* Class : Singly Linked List
+*************************************************************************/
 	template <typename T>
 	class SLinkedList
 	{
@@ -40,19 +63,28 @@ namespace pke
 		void pushfront(const T& ivalue);
 		void insertAt(const T& ivalue, int index);
 		void clear();
-		T pop();
-		void removefirst();
-		void removeAt(int iIndex);
+		T popback();
+		T popfront();
+		T popAt(int iIndex);
+		inline int size() const { return m_Size; }
+		inline bool isEmpty() const { return m_Size == 0; }
+		T& at(int iIndex);
+		const T& at(int iIndex) const;
+		bool search(const T& ivalue) const;
 		void reverse();
-		void rotateRight();
-		void rotateLeft();
-		int size() const;
-		bool isEmpty() const;
-		T& at() const;
-		bool search(const T& ivalue);
+		bool isCycle() const;
+		T& front();
+		T& back();
+		const T& front() const;
+		const T& back() const;
+
+		Iterator<T> begin();
+		Iterator<T> end();
 
 	private:
-		Node<T>* m_pHead;
-		int m_Size;
+		Node<T>* m_pHead = nullptr;
+		int m_Size = 0;
 	};
 }
+
+#include "SLinkedList.inl"

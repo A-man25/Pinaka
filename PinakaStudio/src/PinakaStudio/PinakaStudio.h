@@ -6,6 +6,8 @@ public:
 	void run();
 private:
 	void processDriverCode();
+	void runVectorTest();
+	void runSLinkedListTest();
 };
 
 
