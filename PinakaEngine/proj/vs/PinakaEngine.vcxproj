@@ -109,6 +109,7 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\LineSegment.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl" />
   </ItemGroup>
@@ -119,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\build\src" />
+    <None Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

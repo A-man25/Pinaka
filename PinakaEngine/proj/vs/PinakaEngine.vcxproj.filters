@@ -66,6 +66,9 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl">
       <Filter>Pinaka\Foundation\Memory</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.h">
+      <Filter>Pinaka\Foundation\Memory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
@@ -81,6 +84,9 @@
   <ItemGroup>
     <None Include="..\..\..\build\src">
       <Filter>build</Filter>
+    </None>
+    <None Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.inl">
+      <Filter>Pinaka\Foundation\Memory</Filter>
     </None>
   </ItemGroup>
 </Project>
