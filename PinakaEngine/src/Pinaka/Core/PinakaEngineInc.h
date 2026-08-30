@@ -1,3 +1,15 @@
+/*------------------------------------------------------------------------
+ * Project     : PinakaEngine
+ * File        : PinakaEngineInc
+ * Description : Pinaka Engine Includes
+ *
+ * Author      : Aman Rajesh Choudhari
+ * Created On  : 30/08/2026
+ *
+ * Copyright (c) 2026 Aman Rajesh Choudhari
+ * All rights reserved.
+ * ----------------------------------------------------------------------*/
+
 #pragma once
 #include <iostream>
 #include <exception>
@@ -17,10 +29,5 @@
 #include "Core.h"
 #include <Pinaka/Foundation/Containers/Vector.h>
 #include <Pinaka/Foundation/Containers/SLinkedList.h>
+#include <Pinaka/Foundation/Memory/Unique_ptr.h>
 #include "Application/PinakaEngApp.h"
-
-
-/***********************************************************************
-* TypeDefs
-***********************************************************************/
-typedef pke::Vector<int> IntegerVector;

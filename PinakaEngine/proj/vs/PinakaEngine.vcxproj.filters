@@ -60,10 +60,10 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h">
       <Filter>Pinaka\Foundation\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.h">
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.h">
       <Filter>Pinaka\Foundation\Memory</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.inl">
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl">
       <Filter>Pinaka\Foundation\Memory</Filter>
     </ClInclude>
   </ItemGroup>

@@ -109,8 +109,8 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\LineSegment.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Memory.inl" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.h" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp" />
