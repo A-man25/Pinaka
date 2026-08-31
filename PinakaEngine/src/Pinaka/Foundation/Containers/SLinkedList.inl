@@ -22,7 +22,7 @@ namespace pke
 		if (list.size() == 0)
 			return;
 
-		m_Size = list.size();
+		m_Size = (int)list.size();
 
 		m_pHead = new Node<T>();
 		Node<T>* cursor = m_pHead;
@@ -31,7 +31,7 @@ namespace pke
 		for (const auto& value : list)
 		{
 			cursor->m_val = value;
-			if (index != list.size() - 1)
+			if (index != (int)list.size() - 1)
 			{
 				cursor->m_pNext = new Node<T>();
 				cursor = cursor->m_pNext;

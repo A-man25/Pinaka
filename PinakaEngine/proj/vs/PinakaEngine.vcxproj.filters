@@ -36,6 +36,9 @@
     <ClInclude Include="..\..\src\Pinaka\Core\Core.h">
       <Filter>Pinaka\Core</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Core\EntryPoint.h">
+      <Filter>Pinaka\Core</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Core\PinakaEngineInc.h">
       <Filter>Pinaka\Core</Filter>
     </ClInclude>
@@ -60,13 +63,16 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h">
       <Filter>Pinaka\Foundation\Math</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.h">
+      <Filter>Pinaka\Foundation\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.inl">
+      <Filter>Pinaka\Foundation\Memory</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.h">
       <Filter>Pinaka\Foundation\Memory</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl">
-      <Filter>Pinaka\Foundation\Memory</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.h">
       <Filter>Pinaka\Foundation\Memory</Filter>
     </ClInclude>
   </ItemGroup>
@@ -84,9 +90,6 @@
   <ItemGroup>
     <None Include="..\..\..\build\src">
       <Filter>build</Filter>
-    </None>
-    <None Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.inl">
-      <Filter>Pinaka\Foundation\Memory</Filter>
     </None>
   </ItemGroup>
 </Project>

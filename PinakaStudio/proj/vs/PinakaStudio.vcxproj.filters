@@ -1,24 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="PinakaStudio">
-      <UniqueIdentifier>{919DCDEB-7D00-5D90-2686-954612C82813}</UniqueIdentifier>
+    <Filter Include="Studio">
+      <UniqueIdentifier>{1D2BF0D1-09CD-1AA8-F287-2EFCDEC8A1F8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="main">
-      <UniqueIdentifier>{6A7F9A7C-56B6-9B0D-FFA2-8110EBB8170F}</UniqueIdentifier>
+    <Filter Include="Studio\Application">
+      <UniqueIdentifier>{60FA09EF-4CDE-CA44-B53E-C597A141B5C6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\PinakaStudio\PinakaStudio.h">
-      <Filter>PinakaStudio</Filter>
+    <ClInclude Include="..\..\src\Studio\Application\StudioApplication.h">
+      <Filter>Studio\Application</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\PinakaStudio\PinakaStudio.cpp">
-      <Filter>PinakaStudio</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\src\main\main.cpp">
-      <Filter>main</Filter>
+    <ClCompile Include="..\..\src\Studio\Application\StudioApplication.cpp">
+      <Filter>Studio\Application</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

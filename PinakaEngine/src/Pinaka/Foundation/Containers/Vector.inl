@@ -15,7 +15,7 @@ namespace pke
 	template <typename T>
 	Vector<T>::Vector(std::initializer_list<T> iList)
 	{
-		m_Size = iList.size();
+		m_Size = (int)iList.size();
 		m_Capacity = m_Size;
 		m_pVal = new T[m_Size];
 		int i = 0;

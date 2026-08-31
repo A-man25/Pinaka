@@ -1,17 +1,7 @@
-#include "PinakaStudio.h"
+#include "TestApp.h"
+#include <Pinaka/Core/PinakaEngineInc.h>
 
-void CPinakaStudio::run()
-{
-	processDriverCode();
-}
-
-void CPinakaStudio::processDriverCode()
-{
-    this->runVectorTest();
-    this->runSLinkedListTest();
-}
-
-void CPinakaStudio::runVectorTest()
+void TestApp::runVectorTest()
 {
     std::cout << "\n"
         << "============================================================\n"
@@ -35,7 +25,7 @@ void CPinakaStudio::runVectorTest()
         << "------------------------------------------------------------\n";
 }
 
-void CPinakaStudio::runSLinkedListTest()
+void TestApp::runSLinkedListTest()
 {
     std::cout << "\n"
         << "============================================================\n"

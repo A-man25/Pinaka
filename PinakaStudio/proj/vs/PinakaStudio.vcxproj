@@ -97,11 +97,10 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\PinakaStudio\PinakaStudio.h" />
+    <ClInclude Include="..\..\src\Studio\Application\StudioApplication.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\PinakaStudio\PinakaStudio.cpp" />
-    <ClCompile Include="..\..\src\main\main.cpp" />
+    <ClCompile Include="..\..\src\Studio\Application\StudioApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\PinakaEngine\proj\vs\PinakaEngine.vcxproj">

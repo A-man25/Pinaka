@@ -97,6 +97,13 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\src\TestApp\TestApp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\TestApp\TestApp.cpp" />
+    <ClCompile Include="..\..\src\TestApp\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\..\PinakaEngine\proj\vs\PinakaEngine.vcxproj">
       <Project>{4F3AB1CA-3B9D-406F-E422-7925D0640CF2}</Project>
     </ProjectReference>
