@@ -10,6 +10,9 @@
     <Filter Include="Pinaka\Core\Application">
       <UniqueIdentifier>{B4858B82-20BD-D319-29C7-373D957DFA12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pinaka\Core\Window">
+      <UniqueIdentifier>{381C27A3-2400-E8F8-8D60-E24B7963D27A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Pinaka\Foundation">
       <UniqueIdentifier>{1FCFEFC8-8BE5-ED5E-D45C-798040B2BEE6}</UniqueIdentifier>
     </Filter>
@@ -24,6 +27,12 @@
     </Filter>
     <Filter Include="Pinaka\Foundation\Memory">
       <UniqueIdentifier>{A76D193A-9392-68BA-BCDD-4D4AA86167D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Platform">
+      <UniqueIdentifier>{ED944A75-5920-B839-6231-3B2ECE3B143A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pinaka\Platform\Windows">
+      <UniqueIdentifier>{27DCE06D-9313-2905-9C1D-8D2808D44FFE}</UniqueIdentifier>
     </Filter>
     <Filter Include="build">
       <UniqueIdentifier>{D5562E0F-416B-56C0-0AED-F91F76C052F1}</UniqueIdentifier>
@@ -41,6 +50,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Core\PinakaEngineInc.h">
       <Filter>Pinaka\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Core\Window\Window.h">
+      <Filter>Pinaka\Core\Window</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Foundation\Algorithms\algorithm.h">
       <Filter>Pinaka\Foundation\Algorithms</Filter>
@@ -75,6 +87,9 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl">
       <Filter>Pinaka\Foundation\Memory</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.h">
+      <Filter>Pinaka\Platform\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
@@ -85,6 +100,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point.cpp">
       <Filter>Pinaka\Foundation\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Pinaka\Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

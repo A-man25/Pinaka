@@ -103,6 +103,7 @@
     <ClInclude Include="..\..\src\Pinaka\Core\Core.h" />
     <ClInclude Include="..\..\src\Pinaka\Core\EntryPoint.h" />
     <ClInclude Include="..\..\src\Pinaka\Core\PinakaEngineInc.h" />
+    <ClInclude Include="..\..\src\Pinaka\Core\Window\Window.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Algorithms\algorithm.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.inl" />
@@ -114,11 +115,13 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.inl" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl" />
+    <ClInclude Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp" />
     <ClCompile Include="..\..\src\Pinaka\Foundation\Math\LineSegment.cpp" />
     <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point.cpp" />
+    <ClCompile Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\build\src" />
