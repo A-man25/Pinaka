@@ -74,7 +74,7 @@ namespace pke
 		bool m_Running;
 
 		/*
-		* Window pointer (unique ptr)
+		* Window pointer (will be unique ptr)
 		*/
 		Window* m_pWindow;
 	};
