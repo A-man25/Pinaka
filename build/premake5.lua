@@ -18,10 +18,90 @@ workspace "Pinaka"
 
 
 -- ============================================================
--- Output Configuration
+-- Global Configuration
 -- ============================================================
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+GLFW_DIR = "../thirdparty/GLFW/glfw"
+
+
+-- ============================================================
+-- Third Party - GLFW
+-- ============================================================
+
+group "ThirdParty"
+
+project "GLFW"
+
+    location "../proj/vs/ThirdParty/GLFW"
+
+    kind "StaticLib"
+    language "C"
+
+    targetdir ("../bin/" .. outputdir)
+    objdir    ("../obj/" .. outputdir .. "/%{prj.name}")
+
+    files
+    {
+        -- GLFW Headers
+        GLFW_DIR .. "/include/GLFW/glfw3.h",
+        GLFW_DIR .. "/include/GLFW/glfw3native.h",
+
+        -- Common GLFW source
+        GLFW_DIR .. "/src/context.c",
+        GLFW_DIR .. "/src/init.c",
+        GLFW_DIR .. "/src/input.c",
+        GLFW_DIR .. "/src/monitor.c",
+        GLFW_DIR .. "/src/platform.c",
+        GLFW_DIR .. "/src/vulkan.c",
+        GLFW_DIR .. "/src/window.c",
+
+        -- Context implementations
+        GLFW_DIR .. "/src/egl_context.c",
+        GLFW_DIR .. "/src/osmesa_context.c"
+    }
+
+    includedirs
+    {
+        GLFW_DIR .. "/include",
+        GLFW_DIR .. "/src"
+    }
+
+    filter "system:windows"
+
+        systemversion "latest"
+
+        defines
+        {
+            "_GLFW_WIN32"
+        }
+
+        files
+        {
+            GLFW_DIR .. "/src/win32_init.c",
+            GLFW_DIR .. "/src/win32_joystick.c",
+            GLFW_DIR .. "/src/win32_module.c",
+            GLFW_DIR .. "/src/win32_monitor.c",
+            GLFW_DIR .. "/src/win32_thread.c",
+            GLFW_DIR .. "/src/win32_time.c",
+            GLFW_DIR .. "/src/win32_window.c",
+            GLFW_DIR .. "/src/wgl_context.c"
+        }
+
+    filter "configurations:Debug"
+
+        symbols "On"
+        runtime "Debug"
+
+    filter "configurations:Release"
+
+        optimize "On"
+        runtime "Release"
+
+    filter {}
+
+group ""
 
 
 -- ============================================================
@@ -41,11 +121,10 @@ project "PinakaEngine"
 
     files
     {
-        "src",
         "../PinakaEngine/src/**.h",
         "../PinakaEngine/src/**.hpp",
         "../PinakaEngine/src/**.cpp",
-        "../PinakaEngine/src/**.inl",
+        "../PinakaEngine/src/**.inl"
     }
 
     vpaths
@@ -55,7 +134,15 @@ project "PinakaEngine"
 
     includedirs
     {
-        "../PinakaEngine/src"
+        "../PinakaEngine/src",
+
+        -- GLFW Headers
+        GLFW_DIR .. "/include"
+    }
+
+    links
+    {
+        "GLFW"
     }
 
     defines
@@ -64,6 +151,7 @@ project "PinakaEngine"
     }
 
     filter "system:windows"
+
         systemversion "latest"
 
         defines
@@ -71,7 +159,13 @@ project "PinakaEngine"
             "PK_PLATFORM_WINDOWS"
         }
 
+        links
+        {
+            "dwmapi"
+        }
+
     filter "configurations:Debug"
+
         defines
         {
             "PK_DEBUG"
@@ -81,6 +175,7 @@ project "PinakaEngine"
         runtime "Debug"
 
     filter "configurations:Release"
+
         defines
         {
             "PK_RELEASE"
@@ -112,13 +207,14 @@ project "PinakaStudio"
         "../PinakaStudio/src/**.h",
         "../PinakaStudio/src/**.hpp",
         "../PinakaStudio/src/**.cpp",
-        "../PinakaStudio/src/**.inl",
+        "../PinakaStudio/src/**.inl"
     }
 
     vpaths
     {
         ["*"] = "../PinakaStudio/src"
     }
+
     includedirs
     {
         "../PinakaEngine/src"
@@ -135,6 +231,7 @@ project "PinakaStudio"
     }
 
     filter "system:windows"
+
         systemversion "latest"
 
         defines
@@ -143,6 +240,7 @@ project "PinakaStudio"
         }
 
     filter "configurations:Debug"
+
         defines
         {
             "PK_DEBUG"
@@ -152,6 +250,7 @@ project "PinakaStudio"
         runtime "Debug"
 
     filter "configurations:Release"
+
         defines
         {
             "PK_RELEASE"
@@ -207,6 +306,7 @@ project "Tests"
     }
 
     filter "system:windows"
+
         systemversion "latest"
 
         defines
@@ -215,6 +315,7 @@ project "Tests"
         }
 
     filter "configurations:Debug"
+
         defines
         {
             "PK_DEBUG"
@@ -224,6 +325,7 @@ project "Tests"
         runtime "Debug"
 
     filter "configurations:Release"
+
         defines
         {
             "PK_RELEASE"

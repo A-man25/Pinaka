@@ -16,8 +16,9 @@ namespace pke
 	void Application::run()
 	{
 		initEngine();
-		while (m_Running)
+		while (m_Running && m_pWindow->isOpen())
 		{
+			m_pWindow->update();
 			update();
 		}
 
@@ -26,17 +27,19 @@ namespace pke
 
 	void Application::initEngine()
 	{
+		m_pWindow = createWindow();
 		m_Running = true;
 	}
 
 	void Application::update()
 	{
-
+		
 	}
 
 	void Application::shutdown()
 	{
-
+		delete m_pWindow;
+		m_pWindow = nullptr;
 	}
 
 	void Application::requestShutdown()

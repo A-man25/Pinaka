@@ -34,9 +34,6 @@
     <Filter Include="Pinaka\Platform\Windows">
       <UniqueIdentifier>{27DCE06D-9313-2905-9C1D-8D2808D44FFE}</UniqueIdentifier>
     </Filter>
-    <Filter Include="build">
-      <UniqueIdentifier>{D5562E0F-416B-56C0-0AED-F91F76C052F1}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.h">
@@ -104,10 +101,5 @@
     <ClCompile Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.cpp">
       <Filter>Pinaka\Platform\Windows</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\..\build\src">
-      <Filter>build</Filter>
-    </None>
   </ItemGroup>
 </Project>

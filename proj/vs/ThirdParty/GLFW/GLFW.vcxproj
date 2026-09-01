@@ -11,21 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{4F3AB1CA-3B9D-406F-E422-7925D0640CF2}</ProjectGuid>
+    <ProjectGuid>{154B857C-0182-860D-AA6E-6C109684020F}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>PinakaEngine</RootNamespace>
+    <RootNamespace>GLFW</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
@@ -41,36 +41,31 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)..\..\..\bin\Debug-windows-x86_64\</OutDir>
-    <IntDir>$(ProjectDir)..\..\..\obj\Debug-windows-x86_64\PinakaEngine\</IntDir>
-    <TargetName>PinakaEngine</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <OutDir>$(ProjectDir)..\..\..\..\bin\Debug-windows-x86_64\</OutDir>
+    <IntDir>$(ProjectDir)..\..\..\..\obj\Debug-windows-x86_64\GLFW\</IntDir>
+    <TargetName>GLFW</TargetName>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\..\..\bin\Release-windows-x86_64\</OutDir>
-    <IntDir>$(ProjectDir)..\..\..\obj\Release-windows-x86_64\PinakaEngine\</IntDir>
-    <TargetName>PinakaEngine</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <OutDir>$(ProjectDir)..\..\..\..\bin\Release-windows-x86_64\</OutDir>
+    <IntDir>$(ProjectDir)..\..\..\..\obj\Release-windows-x86_64\GLFW\</IntDir>
+    <TargetName>GLFW</TargetName>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_BUILD_DLL;PK_PLATFORM_WINDOWS;PK_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\src;..\..\..\thirdparty\GLFW\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\thirdparty\GLFW\glfw\include;..\..\..\..\thirdparty\GLFW\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp20</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\..\..\bin\Debug-windows-x86_64\PinakaEngine.lib</ImportLibrary>
     </Link>
     <ProjectReference>
     </ProjectReference>
@@ -79,56 +74,46 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>PK_BUILD_DLL;PK_PLATFORM_WINDOWS;PK_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\src;..\..\..\thirdparty\GLFW\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\..\thirdparty\GLFW\glfw\include;..\..\..\..\thirdparty\GLFW\glfw\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <LanguageStandard>stdcpp20</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\..\..\bin\Release-windows-x86_64\PinakaEngine.lib</ImportLibrary>
     </Link>
     <ProjectReference>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.h" />
-    <ClInclude Include="..\..\src\Pinaka\Core\Core.h" />
-    <ClInclude Include="..\..\src\Pinaka\Core\EntryPoint.h" />
-    <ClInclude Include="..\..\src\Pinaka\Core\PinakaEngineInc.h" />
-    <ClInclude Include="..\..\src\Pinaka\Core\Window\Window.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Algorithms\algorithm.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\SLinkedList.inl" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\LineSegment.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.inl" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.h" />
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Unique_ptr.inl" />
-    <ClInclude Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="..\..\..\..\thirdparty\GLFW\glfw\include\GLFW\glfw3.h" />
+    <ClInclude Include="..\..\..\..\thirdparty\GLFW\glfw\include\GLFW\glfw3native.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp" />
-    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\LineSegment.cpp" />
-    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point.cpp" />
-    <ClCompile Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\proj\vs\ThirdParty\GLFW\GLFW.vcxproj">
-      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
-    </ProjectReference>
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\context.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\egl_context.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\init.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\input.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\monitor.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\osmesa_context.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\platform.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\vulkan.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\wgl_context.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\win32_init.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\win32_joystick.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\win32_module.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\win32_monitor.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\win32_thread.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\win32_time.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\win32_window.c" />
+    <ClCompile Include="..\..\..\..\thirdparty\GLFW\glfw\src\window.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

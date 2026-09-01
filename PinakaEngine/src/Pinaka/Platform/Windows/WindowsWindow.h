@@ -15,9 +15,20 @@
 
 namespace pke
 {
-	class Windows_Window : public Window
+	class WindowsWindow : public Window
 	{
-		
-	};
+	public:
+		WindowsWindow() :m_width(1280), m_height(720), m_isOpen(true) {}
+		WindowsWindow(int width, int height) : m_width(width), m_height(height), m_isOpen(true) {}
+		inline unsigned int width() const override;
+		inline unsigned int height() const override;
+		inline bool isOpen() const override;
+		void update() override;
+		~WindowsWindow() override;
 
-}
+	private:
+		unsigned int m_width;
+		unsigned int m_height;
+		bool m_isOpen;
+	};
+} 

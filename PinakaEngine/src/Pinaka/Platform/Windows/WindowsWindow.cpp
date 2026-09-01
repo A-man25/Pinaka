@@ -11,5 +11,36 @@
  * ----------------------------------------------------------------------*/
 
 #pragma once
+#include "WindowsWindow.h"
 
+namespace pke
+{
+	Window* createWindow()
+	{
+		return new WindowsWindow();
+	}
 
+	unsigned int WindowsWindow::width() const
+	{
+		return m_width;
+	}
+
+	unsigned int WindowsWindow::height() const
+	{ 
+		return m_height;
+	}
+	bool WindowsWindow::isOpen() const
+	{ 
+		return m_isOpen;
+	}
+
+	void WindowsWindow::update()
+	{
+		
+	}
+
+	WindowsWindow::~WindowsWindow()
+	{
+
+	}
+}

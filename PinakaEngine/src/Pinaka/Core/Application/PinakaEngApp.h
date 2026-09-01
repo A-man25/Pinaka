@@ -15,6 +15,8 @@
 
 namespace pke
 {
+	class Window; 
+
 	class PK_API Application
 	{
 	public:
@@ -22,7 +24,7 @@ namespace pke
 		* Application Constructor : As soon as the object is created m_running
 		* is initialised to false
 		*/
-		Application() :m_Running(false) {}
+		Application() : m_Running(false), m_pWindow(nullptr) {}
 
 		/*
 		* Virtual destructor because to delete all the derived class objects
@@ -70,6 +72,11 @@ namespace pke
 		* Switch to control the game loop
 		*/
 		bool m_Running;
+
+		/*
+		* Window pointer (unique ptr)
+		*/
+		Window* m_pWindow;
 	};
 
 

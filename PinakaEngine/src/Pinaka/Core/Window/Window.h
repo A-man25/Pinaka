@@ -50,4 +50,6 @@ namespace pke
 		virtual ~Window() = default;
 	};
 
+	Window* createWindow();
+
 }
