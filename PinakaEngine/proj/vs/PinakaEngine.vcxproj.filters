@@ -10,6 +10,9 @@
     <Filter Include="Pinaka\Core\Application">
       <UniqueIdentifier>{B4858B82-20BD-D319-29C7-373D957DFA12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pinaka\Core\Events">
+      <UniqueIdentifier>{35BB107A-219F-D1CF-8AFF-CB227602BC51}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Pinaka\Core\Window">
       <UniqueIdentifier>{381C27A3-2400-E8F8-8D60-E24B7963D27A}</UniqueIdentifier>
     </Filter>
@@ -44,6 +47,9 @@
     </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Core\EntryPoint.h">
       <Filter>Pinaka\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Core\Events\Event.h">
+      <Filter>Pinaka\Core\Events</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Core\PinakaEngineInc.h">
       <Filter>Pinaka\Core</Filter>
