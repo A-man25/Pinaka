@@ -12,16 +12,18 @@
 
 #pragma once
 #include <Pinaka/Core/Window/Window.h>
+#include <GLFW/glfw3.h>
 
 namespace pke
 {
 	class WindowsWindow : public Window
 	{
 	public:
-		WindowsWindow() :m_width(1280), m_height(720), m_isOpen(true) {}
-		WindowsWindow(int width, int height) : m_width(width), m_height(height), m_isOpen(true) {}
+		WindowsWindow();
+		WindowsWindow(int width, int height, const char* name);
 		inline unsigned int width() const override;
 		inline unsigned int height() const override;
+		inline const char* name() const override;
 		inline bool isOpen() const override;
 		void update() override;
 		~WindowsWindow() override;
@@ -29,6 +31,8 @@ namespace pke
 	private:
 		unsigned int m_width;
 		unsigned int m_height;
-		bool m_isOpen;
+		const char* m_name;
+		GLFWwindow* m_pWindow;
+		
 	};
 } 

@@ -44,7 +44,7 @@ namespace pke
 
 	void Application::requestShutdown()
 	{
-		m_Running = false;
+		m_Running = true;
 	}
 
 }

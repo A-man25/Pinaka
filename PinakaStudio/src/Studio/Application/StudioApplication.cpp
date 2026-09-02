@@ -15,5 +15,5 @@
 void StudioApplication::update()
 {
 	std::cout << "Update Studio Application" << std::endl;
-	requestShutdown();
+	//requestShutdown();
 }

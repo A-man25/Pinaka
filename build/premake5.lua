@@ -59,9 +59,15 @@ project "GLFW"
 
         -- Context implementations
         GLFW_DIR .. "/src/egl_context.c",
-        GLFW_DIR .. "/src/osmesa_context.c"
-    }
+        GLFW_DIR .. "/src/osmesa_context.c",
 
+        -- GLFW null backend - required by current GLFW
+        GLFW_DIR .. "/src/null_init.c",
+        GLFW_DIR .. "/src/null_monitor.c",
+        GLFW_DIR .. "/src/null_window.c",
+        GLFW_DIR .. "/src/null_joystick.c"
+    }
+    
     includedirs
     {
         GLFW_DIR .. "/include",

@@ -38,6 +38,12 @@ namespace pke
 		virtual unsigned int height() const = 0;
 
 		/*
+		* Get the name of the window, name that is 
+		* displayed on the top
+		*/
+		virtual const char* name() const = 0;
+
+		/*
 		* Is the window open ?
 		*/
 		virtual bool isOpen() const = 0;
