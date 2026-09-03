@@ -34,6 +34,19 @@ namespace pke
 		Mouse = 1 << 3
 	};
 
+	/*
+	 * Combine two event categories.
+	 *
+	 * Example:
+	 * Input | Keyboard
+	 */
+	constexpr EventCategory operator|(EventCategory lhs, EventCategory rhs)
+	{
+		using Type = std::underlying_type_t<EventCategory>;
+
+		return static_cast<EventCategory>(static_cast<Type>(lhs) | static_cast<Type>(rhs));
+	}
+
 	class PK_API Event
 	{
 	public:
@@ -61,8 +74,20 @@ namespace pke
 
 		/*
 		* Method to get Event category
+		* Use like EventCategory::Input | EventCategory::Keyboard
 		*/
 		virtual EventCategory category() const = 0;
+
+		/*
+		 * Check whether this event belongs
+		 * to a particular category.
+		 */
+		bool isInCategory(EventCategory category) const
+		{
+			using Type = std::underlying_type_t<EventCategory>;
+
+			return (static_cast<Type>(this->category()) & static_cast<Type>(category)) != 0;
+		}
 
 		virtual ~Event();
 

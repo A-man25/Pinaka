@@ -93,6 +93,9 @@
     <ClInclude Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.h">
       <Filter>Pinaka\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Core\Events\WindowEvent.h">
+      <Filter>Pinaka\Core\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
