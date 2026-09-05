@@ -15,7 +15,9 @@
 
 namespace pke
 {
+
 	class Window; 
+	class Event;
 
 	class PK_API Application
 	{
@@ -55,6 +57,12 @@ namespace pke
 		* is the applicaiton classes
 		*/
 		void requestShutdown();
+
+		/*
+		* on Event, Application gets an event as an input 
+		* it processes the event and not the WINDOW
+		*/
+		void onEvent(Event& event);
 
 	private:
 		/*

@@ -11,12 +11,17 @@
  * ----------------------------------------------------------------------*/
 
 #pragma once
+
+/*****************************************************************************
+*	MSVC Includes
+******************************************************************************/
 #include <iostream>
 #include <exception>
 #include <algorithm>
 #include <math.h>
 #include <Windows.h>
 #include <utility>
+#include <functional>
 
 #include <vector>
 #include <string>
@@ -26,9 +31,27 @@
 #include <set>
 #include <stack>
 
+
+/*****************************************************************************
+*	Pinaka Core
+******************************************************************************/
 #include "Core.h"
+#include "Application/PinakaEngApp.h"
+
+/*****************************************************************************
+*	Pinaka Containers
+******************************************************************************/
 #include <Pinaka/Foundation/Containers/Vector.h>
 #include <Pinaka/Foundation/Containers/SLinkedList.h>
+
+/*****************************************************************************
+*	Pinaka Memory
+******************************************************************************/
 #include <Pinaka/Foundation/Memory/Unique_ptr.h>
-#include "Application/PinakaEngApp.h"
+#include <Pinaka/Foundation/Memory/Shared_ptr.h>
+
+/*****************************************************************************
+*	Pinaka Interfaces
+******************************************************************************/
 #include <Pinaka/Core/Window/Window.h>
+#include <Pinaka/Core/Events/Event.h>

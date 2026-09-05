@@ -27,12 +27,18 @@ namespace pke
 		inline bool isOpen() const override;
 		void update() override;
 		~WindowsWindow() override;
+		void registerEventCallback(const EventCallbackFn& eventCallback) override;
+
+	private:
+		void setupCallbacks();
+		void setupWindowCloseCallback();
 
 	private:
 		unsigned int m_width;
 		unsigned int m_height;
 		const char* m_name;
 		GLFWwindow* m_pWindow;
+		EventCallbackFn m_EventCallbackfn;
 		
 	};
 } 

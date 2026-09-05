@@ -15,6 +15,8 @@
 
 namespace pke
 {
+	class Event;
+
 	/*  --> What a window must be able to do ? 
 	* 
 	* Window interface, this can be any window, Windows window,
@@ -54,6 +56,18 @@ namespace pke
 		virtual void update() = 0;
 
 		virtual ~Window() = default;
+
+	public:
+		/*
+		* This is the callback provided by the application 
+		* application contains onEvent function 
+		*/
+		using EventCallbackFn = std::function<void(Event&)>;
+
+		/*
+		* Register Event Callback
+		*/
+		virtual void registerEventCallback(const EventCallbackFn& eventCallback) = 0;
 	};
 
 	Window* createWindow();

@@ -9,8 +9,8 @@
  * Copyright (c) 2026 Aman Rajesh Choudhari
  * All rights reserved.
  * ----------------------------------------------------------------------*/
-#include "PinakaEngApp.h"
 
+#include "PinakaEngApp.h"
 namespace pke
 {
 	void Application::run()
@@ -28,6 +28,11 @@ namespace pke
 	void Application::initEngine()
 	{
 		m_pWindow = createWindow();
+		m_pWindow->registerEventCallback(
+										[this](Event& event) 
+										{ 
+											onEvent(event);
+										});
 		m_Running = true;
 	}
 
@@ -44,7 +49,14 @@ namespace pke
 
 	void Application::requestShutdown()
 	{
-		m_Running = true;
+		m_Running = false;
+	}
+
+	void Application::onEvent(Event& event)
+	{
+		std::cout << event.name() << std::endl;
+		if (event.eventType() == EventType::WindowClose)
+			requestShutdown();
 	}
 
 }

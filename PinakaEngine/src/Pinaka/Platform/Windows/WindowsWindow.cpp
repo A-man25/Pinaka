@@ -12,6 +12,7 @@
 
 #pragma once
 #include "WindowsWindow.h"
+#include <Pinaka/Core/Events/WindowEvent.h>
 
 namespace pke
 {
@@ -23,14 +24,26 @@ namespace pke
 	WindowsWindow::WindowsWindow() :m_width(1280), m_height(720), m_name("Pinaka"), m_pWindow(nullptr)
 	{
 		if (glfwInit())
+		{
 			m_pWindow = glfwCreateWindow(m_width, m_height, m_name, nullptr, nullptr);
+			
+			if(m_pWindow)
+				setupCallbacks();
+		}
 		
 	}
+
 	WindowsWindow::WindowsWindow(int width, int height, const char* name) : m_width(width), m_height(height), m_name(name), m_pWindow(nullptr)
 	{
 		if (glfwInit())
+		{
 			m_pWindow = glfwCreateWindow(width, height, name, nullptr, nullptr);
+			
+			if (m_pWindow)
+				setupCallbacks();
+		}
 	}
+
 	unsigned int WindowsWindow::width() const
 	{
 		return m_width;
@@ -40,10 +53,12 @@ namespace pke
 	{ 
 		return m_height;
 	}
+
 	bool WindowsWindow::isOpen() const
 	{ 
 		return !glfwWindowShouldClose(m_pWindow);
 	}
+
 	const char* WindowsWindow::name() const
 	{
 		return m_name;
@@ -61,5 +76,34 @@ namespace pke
 			glfwDestroyWindow(m_pWindow);
 
 		glfwTerminate(); // Shuts down the entire glfw library
+	}
+
+	void WindowsWindow::registerEventCallback(const EventCallbackFn& eventCallback)
+	{
+		m_EventCallbackfn = eventCallback;
+	}
+
+	void WindowsWindow::setupCallbacks()
+	{
+		glfwSetWindowUserPointer(m_pWindow, this);
+		setupWindowCloseCallback();
+
+
+	}
+
+	void WindowsWindow::setupWindowCloseCallback()
+	{
+		glfwSetWindowCloseCallback(
+			m_pWindow,
+			[](GLFWwindow* window)
+			{
+				WindowsWindow* windowObj = static_cast<WindowsWindow*>(glfwGetWindowUserPointer(window));
+				if (windowObj && windowObj->m_EventCallbackfn)
+				{
+					WindowCloseEvent event;
+					windowObj->m_EventCallbackfn(event);
+				}
+			}
+		);
 	}
 }
