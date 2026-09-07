@@ -32,20 +32,17 @@ namespace pke
 	private:
 
 		void setupCallbacks();
-
-		/*
-		* GLFW, If an event happens later this is the function you should call,
-		* Basically install the doorbell, whenever someone rings just call the doorbell
-		* instead of creating a new doorbell everytime
-		* This is only for window close
-		* Similarly all the events will be configured here
-		*/
+		void setupWindowCallbacks();
 		void setupWindowCloseCallback();
 		void setupWindowResizeCallback();
 		void setupWindowIconifyCallback();
+		void setupWindowMovedCallback();
+		void setupWindowFocusCallback();
 	private:
 		unsigned int m_width;
 		unsigned int m_height;
+		int m_xPos = 0;
+		int m_yPos = 0;
 		const char* m_name;
 		GLFWwindow* m_pWindow;
 		EventCallbackFn m_EventCallbackfn;

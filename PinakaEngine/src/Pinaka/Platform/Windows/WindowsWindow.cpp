@@ -85,12 +85,19 @@ namespace pke
 
 	void WindowsWindow::setupCallbacks()
 	{
+		
+
+
+	}
+
+	void WindowsWindow::setupWindowCallbacks()
+	{
 		glfwSetWindowUserPointer(m_pWindow, this); // GLFWwindow* now knows what windowsWindow is
 		setupWindowCloseCallback();
 		setupWindowResizeCallback();
 		setupWindowIconifyCallback();
-
-
+		setupWindowMovedCallback();
+		setupWindowFocusCallback();
 	}
 
 	void WindowsWindow::setupWindowCloseCallback()
@@ -140,7 +147,39 @@ namespace pke
 				}
 			}
 		);
+	}
 
+	void WindowsWindow::setupWindowMovedCallback()
+	{
+		glfwSetWindowPosCallback(
+			m_pWindow, [](GLFWwindow* window, int xPos, int yPos)
+			{
+				WindowsWindow* winObj = static_cast <WindowsWindow*>(glfwGetWindowUserPointer(window));
+				if (winObj && winObj->m_EventCallbackfn)
+				{
+					winObj->m_xPos = xPos;
+					winObj->m_yPos = yPos;
+
+					WindowMovedEvent event(xPos, yPos);
+					winObj->m_EventCallbackfn(event);
+				}
+			}
+		);
+	}
+
+	void WindowsWindow::setupWindowFocusCallback()
+	{
+		glfwSetWindowFocusCallback(
+			m_pWindow, [](GLFWwindow* window, int focus)
+			{
+				WindowsWindow* winObj = static_cast<WindowsWindow*>(glfwGetWindowUserPointer(window));
+				if (winObj && winObj->m_EventCallbackfn)
+				{
+					WindowFocusEvent event(focus == GLFW_TRUE);
+					winObj->m_EventCallbackfn(event);
+				}
+			}
+		);
 	}
 
 

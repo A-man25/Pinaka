@@ -19,7 +19,7 @@ namespace pke
 	class WindowEvent : public Event
 	{
 	public:
-		EventCategory category() const { return EventCategory::Window; }
+		EventCategory category() const override { return EventCategory::Window; }
 	};
 
 	class WindowCloseEvent : public WindowEvent
@@ -27,7 +27,7 @@ namespace pke
 	public:
 		WindowCloseEvent() = default;
 		EventType eventType() const override { return EventType::WindowClose; }
-		const char* name() const { return "WindowClosedEvent"; }
+		const char* name() const override{ return "WindowClosedEvent"; }
 	};
 
 	class WindowResizeEvent : public WindowEvent
@@ -36,8 +36,8 @@ namespace pke
 		WindowResizeEvent(unsigned int width, unsigned int height) : m_width(width), m_height(height) {}
 		unsigned int height() const { return m_height; }
 		unsigned int width() const { return m_width; }
-		EventType eventType() const { return EventType::WindowResize; }
-		const char* name() const { return "WindowResizedEvent"; }
+		EventType eventType() const override { return EventType::WindowResize; }
+		const char* name() const override{ return "WindowResizedEvent"; }
 
 	private:
 		unsigned int m_width;
@@ -48,16 +48,31 @@ namespace pke
 	{
 	public:
 		WindowIconifiedEvent(bool iconified) : m_iconified(iconified) {}
-		EventType eventType() const { return EventType::WindowIconified; }
-		const char* name() const { return m_iconified ? "WindowIconifiedEvent" : "WindowRestoredEvent"; }
+		EventType eventType() const override { return EventType::WindowIconified; }
+		const char* name() const override { return m_iconified ? "WindowIconifiedEvent" : "WindowRestoredEvent"; }
 
 	private:
 		bool m_iconified;
 	};
 
-	class WindowMovedEvent : public WindowEvent {};
+	class WindowMovedEvent : public WindowEvent
+	{
+	public:
+		WindowMovedEvent(int xPos, int yPos) : m_xPos(xPos), m_yPos(yPos) {}
+		EventType eventType() const override { return EventType::WindowMoved; }
+		const char* name() const override { return "WindowMovedEvent"; }
+	private:
+		int m_xPos;
+		int m_yPos;
+	};
 
-	class WindowFocusEvent : public WindowEvent {};
-
-	class WindowLostFocusEvent : public WindowEvent {};
+	class WindowFocusEvent : public WindowEvent 
+	{
+	public:
+		WindowFocusEvent(bool focused) : m_focused(focused) {}
+		EventType eventType() const override { return EventType::WindowFocusEvent; }
+		const char* name() const override { return m_focused ? "WindowFocusedEvent" : "WindowLostFocusEvent"; }
+	private:
+		bool m_focused;
+	};
 }

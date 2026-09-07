@@ -18,10 +18,8 @@ namespace pke
 	enum class EventType
 	{
 		None = 0,
-
-		WindowResize, WindowClose, WindowIconified,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved,
-
+		WindowResize, WindowClose, WindowIconified, WindowMoved, WindowFocusEvent,
 		KeyPressed, KeyReleased
 	};
 
