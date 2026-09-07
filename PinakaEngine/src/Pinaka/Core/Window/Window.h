@@ -57,19 +57,33 @@ namespace pke
 
 		virtual ~Window() = default;
 
-	public:
+	public: /* _______To Handle Events_____________*/
 		/*
-		* This is the callback provided by the application 
-		* application contains onEvent function 
+		* This is the callback function provided by the application 
+		* It says whenever an event happens call this function
+		* Application contains onEvent function which is provided as a callback
+		* to Window. We store that callback function into a 
+		* function varialbe std::function< return_type (argument type) > and alias it 
+		* using a name EventCallbackFn
 		*/
 		using EventCallbackFn = std::function<void(Event&)>;
 
 		/*
 		* Register Event Callback
+		* This function recieves a callback 
+		* and simply assigns it to a member, like 
+		* window contains a callback member, which will always be called 
+		* when an event occurs.
 		*/
 		virtual void registerEventCallback(const EventCallbackFn& eventCallback) = 0;
 	};
 
+
+	/*
+	* Function used to create a window
+	* This is just a declaration 
+	* The implementation would be there in all the files which override this implementation
+	*/
 	Window* createWindow();
 
 }

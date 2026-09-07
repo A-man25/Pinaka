@@ -19,7 +19,7 @@ namespace pke
 	{
 		None = 0,
 
-		WindowResize, WindowClose,
+		WindowResize, WindowClose, WindowIconified,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved,
 
 		KeyPressed, KeyReleased

@@ -59,8 +59,12 @@ namespace pke
 		void requestShutdown();
 
 		/*
-		* on Event, Application gets an event as an input 
-		* it processes the event and not the WINDOW
+		* on Event:
+		* Application gets an event as an input 
+		* it processes the event.
+		* In simple terms, application knows what to do whenever something happens
+		* because this layer is responsible to control things in the lifetime of the 
+		* engine
 		*/
 		void onEvent(Event& event);
 

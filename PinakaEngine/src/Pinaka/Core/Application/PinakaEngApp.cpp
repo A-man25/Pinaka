@@ -16,7 +16,7 @@ namespace pke
 	void Application::run()
 	{
 		initEngine();
-		while (m_Running && m_pWindow->isOpen())
+		while (m_Running)
 		{
 			m_pWindow->update();
 			update();
@@ -56,7 +56,14 @@ namespace pke
 	{
 		std::cout << event.name() << std::endl;
 		if (event.eventType() == EventType::WindowClose)
-			requestShutdown();
+		{
+			
+
+		}
+		else if (event.eventType() == EventType::WindowResize)
+		{
+			
+		}
 	}
 
 }

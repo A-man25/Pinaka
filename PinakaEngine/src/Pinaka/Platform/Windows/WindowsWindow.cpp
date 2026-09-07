@@ -85,8 +85,10 @@ namespace pke
 
 	void WindowsWindow::setupCallbacks()
 	{
-		glfwSetWindowUserPointer(m_pWindow, this);
+		glfwSetWindowUserPointer(m_pWindow, this); // GLFWwindow* now knows what windowsWindow is
 		setupWindowCloseCallback();
+		setupWindowResizeCallback();
+		setupWindowIconifyCallback();
 
 
 	}
@@ -106,4 +108,74 @@ namespace pke
 			}
 		);
 	}
+
+	void WindowsWindow::setupWindowResizeCallback()
+	{
+		glfwSetWindowSizeCallback(m_pWindow,
+			[](GLFWwindow* window, int width, int height)
+			{
+				WindowsWindow* windowObj = static_cast<WindowsWindow*>(glfwGetWindowUserPointer(window));
+				if (windowObj && windowObj->m_EventCallbackfn)
+				{
+					windowObj->m_width = width;
+					windowObj->m_height = height;
+
+					WindowResizeEvent event(width, height);
+					windowObj->m_EventCallbackfn(event);
+				}
+				
+			});
+	}
+
+	void WindowsWindow::setupWindowIconifyCallback()
+	{
+		glfwSetWindowIconifyCallback(m_pWindow,
+			[](GLFWwindow* window, int iconified)
+			{
+				WindowsWindow* windowObj = static_cast <WindowsWindow*> (glfwGetWindowUserPointer(window));
+				if (windowObj && windowObj->m_EventCallbackfn)
+				{
+					WindowIconifiedEvent event(iconified == GLFW_TRUE);
+					windowObj->m_EventCallbackfn(event);
+				}
+			}
+		);
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -44,6 +44,17 @@ namespace pke
 		unsigned int m_height;
 	};
 
+	class WindowIconifiedEvent : public WindowEvent
+	{
+	public:
+		WindowIconifiedEvent(bool iconified) : m_iconified(iconified) {}
+		EventType eventType() const { return EventType::WindowIconified; }
+		const char* name() const { return m_iconified ? "WindowIconifiedEvent" : "WindowRestoredEvent"; }
+
+	private:
+		bool m_iconified;
+	};
+
 	class WindowMovedEvent : public WindowEvent {};
 
 	class WindowFocusEvent : public WindowEvent {};
