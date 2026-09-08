@@ -13,6 +13,8 @@
 #pragma once
 #include <Pinaka/Core/Window/Window.h>
 #include <GLFW/glfw3.h>
+#include <Pinaka/Core/Events/KeyEvent.h>
+#include <Pinaka/Core/Events/MouseEvent.h>
 
 namespace pke
 {
@@ -38,6 +40,14 @@ namespace pke
 		void setupWindowIconifyCallback();
 		void setupWindowMovedCallback();
 		void setupWindowFocusCallback();
+
+		void setupKeyCallback();
+		void setupMouseButtonCallback();
+		void setupMousePositionCallback();
+		void setupMouseScrollCallback();
+
+		KeyCode getKeyCode(int key) const;
+		MouseButtonCode getMouseButtonCode(int button) const;
 	private:
 		unsigned int m_width;
 		unsigned int m_height;
@@ -46,6 +56,5 @@ namespace pke
 		const char* m_name;
 		GLFWwindow* m_pWindow;
 		EventCallbackFn m_EventCallbackfn;
-		
 	};
 } 
