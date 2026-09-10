@@ -102,6 +102,9 @@
     <ClInclude Include="..\..\src\Pinaka\Core\Events\MouseEvent.h">
       <Filter>Pinaka\Core\Events</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Core\Events\EventDispatcher.h">
+      <Filter>Pinaka\Core\Events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">

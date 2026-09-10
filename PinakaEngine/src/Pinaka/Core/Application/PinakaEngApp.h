@@ -18,6 +18,13 @@ namespace pke
 
 	class Window; 
 	class Event;
+	class EventDispatcher;
+	class WindowCloseEvent;
+	class WindowResizeEvent;
+	class WindowMovedEvent;
+	class WindowIconifiedEvent;
+	class WindowFocusEvent;
+
 
 	class PK_API Application
 	{
@@ -78,6 +85,22 @@ namespace pke
 		* Method to shut down the engine
 		*/
 		void shutdown();
+
+		/*
+		* Function will be passed as a callback to Dispatcher
+		*/
+		bool onWindowClose(WindowCloseEvent& winCloseEv);
+
+		void handleWindowEvents(EventDispatcher& dispObj);
+
+		bool onWindowResize(WindowResizeEvent& winResEv);
+
+		bool onWindowMove(WindowMovedEvent& winResEv);
+
+		bool onWindowFocus(WindowFocusEvent& winFocEv);
+
+		bool onWindowIconified(WindowIconifiedEvent& winIcEv);
+
 	private:
 
 		/*

@@ -11,6 +11,11 @@
  * ----------------------------------------------------------------------*/
 
 #include "PinakaEngApp.h"
+#include <Pinaka/Core/Events/WindowEvent.h>
+#include <Pinaka/Core/Events/MouseEvent.h>
+#include <Pinaka/Core/Events/KeyEvent.h>
+#include <Pinaka/Core/Events/EventDispatcher.h>
+
 namespace pke
 {
 	void Application::run()
@@ -54,16 +59,51 @@ namespace pke
 
 	void Application::onEvent(Event& event)
 	{
-		std::cout << event.name() << std::endl;
-		if (event.eventType() == EventType::WindowClose)
-		{
-			
-
-		}
-		else if (event.eventType() == EventType::WindowResize)
-		{
-			
-		}
+		EventDispatcher dispatcherObj(event);
+		std::cout << event.handled() << std::endl;
+		
+		std::cout << "Handled ?" << event.handled() << std::endl;
 	}
+
+	bool Application::onWindowClose(WindowCloseEvent& winClEv)
+	{
+		requestShutdown();
+		return true;
+	}
+
+	bool Application::onWindowResize(WindowResizeEvent& winResEv)
+	{
+
+	}
+
+	bool Application::onWindowMove(WindowMovedEvent& winResEv)
+	{
+
+	}
+
+	void Application::handleWindowEvents(EventDispatcher& dispObj)
+	{
+		dispObj.dispatch<WindowCloseEvent>(
+			[this](WindowCloseEvent& event)
+			{
+				return this->onWindowClose(event);
+			});
+
+
+		dispObj.dispatch<WindowResizeEvent>(
+			[this](WindowResizeEvent& event)
+			{
+				return this->onWindowResize(event);
+			});
+
+		dispObj.dispatch<WindowMovedEvent>(
+			[this](WindowMovedEvent& event)
+			{
+				return this->onWindowMove(event);
+			}
+		);
+	}
+
+
 
 }

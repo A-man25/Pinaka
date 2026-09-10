@@ -87,6 +87,8 @@ namespace pke
 			return (static_cast<Type>(this->category()) & static_cast<Type>(category)) != 0;
 		}
 
+		void setHandled(bool handled) { m_handled = handled; }
+
 		virtual ~Event() = default;
 
 	protected:

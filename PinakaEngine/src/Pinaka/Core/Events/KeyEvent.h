@@ -129,6 +129,8 @@ namespace pke
         EventType eventType() const override { return EventType::KeyPressed; }
         const char* name() const override { return "KeyPressedEvent"; }
         bool isRepeat() const { return m_isRepeat; }
+        static EventType staticType() { return EventType::KeyPressed; }
+
 
     private:
         bool m_isRepeat;
@@ -140,5 +142,6 @@ namespace pke
         KeyReleasedEvent(KeyCode keyCode) : KeyEvent(keyCode) {}
         EventType eventType() const override { return EventType::KeyReleased; }
         const char* name() const override { return "KeyReleasedEvent"; }
+        static EventType staticType() { return EventType::KeyReleased; }
 	};
 }

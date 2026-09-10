@@ -28,6 +28,7 @@ namespace pke
 		WindowCloseEvent() = default;
 		EventType eventType() const override { return EventType::WindowClose; }
 		const char* name() const override{ return "WindowClosedEvent"; }
+		static EventType staticType() { return EventType::WindowClose; }
 	};
 
 	class WindowResizeEvent : public WindowEvent
@@ -38,6 +39,8 @@ namespace pke
 		unsigned int width() const { return m_width; }
 		EventType eventType() const override { return EventType::WindowResize; }
 		const char* name() const override{ return "WindowResizedEvent"; }
+		static EventType staticType() { return EventType::WindowResize; }
+
 
 	private:
 		unsigned int m_width;
@@ -50,6 +53,7 @@ namespace pke
 		WindowIconifiedEvent(bool iconified) : m_iconified(iconified) {}
 		EventType eventType() const override { return EventType::WindowIconified; }
 		const char* name() const override { return m_iconified ? "WindowIconifiedEvent" : "WindowRestoredEvent"; }
+		static EventType staticType() { return EventType::WindowIconified; }
 
 	private:
 		bool m_iconified;
@@ -61,6 +65,8 @@ namespace pke
 		WindowMovedEvent(int xPos, int yPos) : m_xPos(xPos), m_yPos(yPos) {}
 		EventType eventType() const override { return EventType::WindowMoved; }
 		const char* name() const override { return "WindowMovedEvent"; }
+		static EventType staticType() { return EventType::WindowMoved; }
+
 	private:
 		int m_xPos;
 		int m_yPos;
@@ -72,6 +78,8 @@ namespace pke
 		WindowFocusEvent(bool focused) : m_focused(focused) {}
 		EventType eventType() const override { return EventType::WindowFocusEvent; }
 		const char* name() const override { return m_focused ? "WindowFocusedEvent" : "WindowLostFocusEvent"; }
+		static EventType staticType() { return EventType::WindowFocusEvent; }
+
 	private:
 		bool m_focused;
 	};

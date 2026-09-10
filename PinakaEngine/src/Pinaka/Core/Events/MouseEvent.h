@@ -46,6 +46,7 @@ namespace pke
 		MouseButtonPressedEvent(MouseButtonCode buttonCode) : MouseButtonEvent(buttonCode) {}
 		EventType eventType() const { return EventType::MouseButtonPressed; }
 		const char* name() const override { return "MouseButtonPressed"; }
+		static EventType staticEventType() { return EventType::MouseButtonPressed; }
 	};
 
 	class MouseButtonReleaseEvent : public MouseButtonEvent
@@ -54,6 +55,7 @@ namespace pke
 		MouseButtonReleaseEvent(MouseButtonCode buttonCode) : MouseButtonEvent(buttonCode) {}
 		EventType eventType() const { return EventType::MouseButtonReleased; }
 		const char* name() const override { return "MouseButtonReleased"; }
+		static EventType staticEventType() { return EventType::MouseButtonReleased; }
 	};
 
 	class MouseMovedEvent : public MouseEvent
@@ -64,6 +66,7 @@ namespace pke
 		double yPos() const { return m_ypos; }
 		EventType eventType() const override { return EventType::MouseMoved; }
 		const char* name() const override { return "MouseMoved"; }
+		static EventType staticEventType() { return EventType::MouseMoved; }
 
 	private:
 		double m_xpos;
@@ -78,6 +81,7 @@ namespace pke
 		double yOffset() const { return m_yoffset; }
 		EventType eventType() const override { return EventType::MouseScrolled; }
 		const char* name() const override { return "MouseScrolled"; }
+		static EventType staticEventType() { return EventType::MouseScrolled; }
 	private:
 		double m_xoffset;
 		double m_yoffset;
