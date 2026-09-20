@@ -61,7 +61,7 @@ namespace pke
 	{
 		EventDispatcher dispatcherObj(event);
 		std::cout << event.handled() << std::endl;
-		
+		handleWindowEvents(dispatcherObj);
 		std::cout << "Handled ?" << event.handled() << std::endl;
 	}
 
@@ -73,13 +73,24 @@ namespace pke
 
 	bool Application::onWindowResize(WindowResizeEvent& winResEv)
 	{
-
+		return true;
 	}
 
 	bool Application::onWindowMove(WindowMovedEvent& winResEv)
 	{
-
+		return true;
 	}
+
+	bool Application::onWindowFocus(WindowFocusEvent& winFocEv)
+	{
+		return true;
+	}
+
+	bool Application::onWindowIconified(WindowIconifiedEvent& winIcEv)
+	{
+		return true;
+	}
+
 
 	void Application::handleWindowEvents(EventDispatcher& dispObj)
 	{
@@ -87,19 +98,35 @@ namespace pke
 			[this](WindowCloseEvent& event)
 			{
 				return this->onWindowClose(event);
-			});
+			}
+		);
 
 
 		dispObj.dispatch<WindowResizeEvent>(
 			[this](WindowResizeEvent& event)
 			{
 				return this->onWindowResize(event);
-			});
+			}
+		);
 
 		dispObj.dispatch<WindowMovedEvent>(
 			[this](WindowMovedEvent& event)
 			{
 				return this->onWindowMove(event);
+			}
+		);
+
+		dispObj.dispatch<WindowFocusEvent>(
+			[this](WindowFocusEvent& event)
+			{
+				return this->onWindowFocus(event);
+			}
+		);
+
+		dispObj.dispatch<WindowIconifiedEvent>(
+			[this](WindowIconifiedEvent& event)
+			{
+				return this->onWindowIconified(event);
 			}
 		);
 	}

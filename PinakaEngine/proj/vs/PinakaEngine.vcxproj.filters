@@ -72,10 +72,10 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl">
       <Filter>Pinaka\Foundation\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\LineSegment.h">
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\GeomEntity.h">
       <Filter>Pinaka\Foundation\Math</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point.h">
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Vector.h">
       <Filter>Pinaka\Foundation\Math</Filter>
     </ClInclude>
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.h">
@@ -110,10 +110,10 @@
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
       <Filter>Pinaka\Core\Application</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\LineSegment.cpp">
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\GeomEntity.cpp">
       <Filter>Pinaka\Foundation\Math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point.cpp">
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Vector.cpp">
       <Filter>Pinaka\Foundation\Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.cpp">
