@@ -105,6 +105,9 @@
     <ClInclude Include="..\..\src\Pinaka\Core\Events\EventDispatcher.h">
       <Filter>Pinaka\Core\Events</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point3D.h">
+      <Filter>Pinaka\Foundation\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp">
@@ -118,6 +121,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.cpp">
       <Filter>Pinaka\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point3D.cpp">
+      <Filter>Pinaka\Foundation\Math</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

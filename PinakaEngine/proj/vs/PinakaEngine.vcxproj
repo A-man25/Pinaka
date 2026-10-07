@@ -117,6 +117,7 @@
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Containers\Vector.inl" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\GeomEntity.h" />
+    <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Point3D.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Math\Vector.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.h" />
     <ClInclude Include="..\..\src\Pinaka\Foundation\Memory\Shared_ptr.inl" />
@@ -127,6 +128,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\Pinaka\Core\Application\PinakaEngApp.cpp" />
     <ClCompile Include="..\..\src\Pinaka\Foundation\Math\GeomEntity.cpp" />
+    <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Point3D.cpp" />
     <ClCompile Include="..\..\src\Pinaka\Foundation\Math\Vector.cpp" />
     <ClCompile Include="..\..\src\Pinaka\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>

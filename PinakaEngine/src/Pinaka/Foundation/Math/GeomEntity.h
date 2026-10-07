@@ -29,9 +29,9 @@ namespace pke
 	class GeomEntity
 	{
 	public:
-
-	private:
-		long m_entId;
-		Geom_Entity_type m_entType;
+		virtual long entId() const = 0;
+		virtual Geom_Entity_type getEntityType() const = 0;
+	protected:
+		static long m_entId;
 	};
 }
