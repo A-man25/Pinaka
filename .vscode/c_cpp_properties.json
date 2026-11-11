@@ -1,0 +1,40 @@
+{
+  "configurations": [
+    {
+      "name": "Windows MSVC x64",
+      "includePath": [
+        "${workspaceFolder}/src/PinakaEngine",
+        "${workspaceFolder}/src/PinakaEngine/Pinaka",
+        "${workspaceFolder}/src/PinakaStudio",
+        "${workspaceFolder}/tests",
+        "${workspaceFolder}/thirdparty/GLFW/glfw/include"
+      ],
+      "defines": [
+        "PK_PLATFORM_WINDOWS",
+        "PK_DEBUG"
+      ],
+      "cStandard": "c17",
+      "cppStandard": "c++20",
+      "intelliSenseMode": "windows-msvc-x64"
+    },
+    {
+      "name": "macOS Apple Clang arm64",
+      "includePath": [
+        "${workspaceFolder}/src/PinakaEngine",
+        "${workspaceFolder}/src/PinakaEngine/Pinaka",
+        "${workspaceFolder}/src/PinakaStudio",
+        "${workspaceFolder}/tests",
+        "${workspaceFolder}/thirdparty/GLFW/glfw/include"
+      ],
+      "defines": [
+        "PK_PLATFORM_MACOS",
+        "PK_DEBUG"
+      ],
+      "compilerPath": "/usr/bin/clang++",
+      "cStandard": "c17",
+      "cppStandard": "c++20",
+      "intelliSenseMode": "macos-clang-arm64"
+    }
+  ],
+  "version": 4
+}

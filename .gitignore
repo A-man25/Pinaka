@@ -1,93 +1,56 @@
+
 # ============================================================
 # PINAKA ENGINE
-# .gitignore
+# Repository Ignore Configuration
 # ============================================================
 
 
 # ------------------------------------------------------------
-# PINAKA Build Output
+# 01. Generated Build Outputs
 # ------------------------------------------------------------
 
-# Intermediate compiler/build files
-obj/
-**/obj/
+/build/bin/
+/build/obj/
 
-# Final binaries
-bin/
-**/bin/
+/proj/
 
 
 # ------------------------------------------------------------
-# Visual Studio Cache
+# 02. Visual Studio Cache
 # ------------------------------------------------------------
-
-# IMPORTANT:
-# We KEEP proj/vs/ because it contains our solution/project files.
-# We ONLY ignore Visual Studio's hidden .vs cache directory.
 
 .vs/
-**/.vs/
-
-
-# ------------------------------------------------------------
-# Visual Studio User-Specific Files
-# ------------------------------------------------------------
-
-*.user
 *.suo
+*.user
 *.userosscache
 *.sln.docstates
-
-
-# ------------------------------------------------------------
-# Visual Studio Database / IntelliSense Files
-# ------------------------------------------------------------
-
 *.VC.db
 *.VC.VC.opendb
 *.opendb
-*.idb
 *.ipch
 *.vsidx
 
 
 # ------------------------------------------------------------
-# Compiler Object Files
+# 03. Compiler Intermediate Files
 # ------------------------------------------------------------
 
 *.o
 *.obj
 *.lo
 *.slo
-
-
-# ------------------------------------------------------------
-# Dependency Files
-# ------------------------------------------------------------
-
 *.d
-
-
-# ------------------------------------------------------------
-# Precompiled Headers
-# ------------------------------------------------------------
-
 *.pch
 *.gch
 
-
-# ------------------------------------------------------------
-# Visual Studio Build Intermediate Files
-# ------------------------------------------------------------
-
-*.tlog
+*.tlog/
 *.lastbuildstate
 *.recipe
 *.ilk
 
 
 # ------------------------------------------------------------
-# Debug Symbols
+# 04. Debug Symbols
 # ------------------------------------------------------------
 
 *.pdb
@@ -95,18 +58,13 @@ bin/
 
 
 # ------------------------------------------------------------
-# Compiled Dynamic Libraries
+# 05. Compiled Libraries
 # ------------------------------------------------------------
 
 *.dll
 *.so
 *.so.*
 *.dylib
-
-
-# ------------------------------------------------------------
-# Compiled Static / Import Libraries
-# ------------------------------------------------------------
 
 *.lib
 *.a
@@ -115,55 +73,76 @@ bin/
 
 
 # ------------------------------------------------------------
-# Executables
+# 06. Executables
 # ------------------------------------------------------------
 
 *.exe
 *.out
-*.app
+*.app/
 
 
 # ------------------------------------------------------------
-# Temporary Files
+# 07. Temporary Files and Logs
 # ------------------------------------------------------------
 
 *.tmp
 *.log
 *.bak
 *.swp
-*.~
+*~
+
+.cache/
+Testing/
 
 
 # ------------------------------------------------------------
-# Package Manager Generated Files
+# 08. Package Managers
 # ------------------------------------------------------------
 
 vcpkg_installed/
 
 
 # ------------------------------------------------------------
-# Test / Cache Output
+# 09. PINAKA Migration Backups
 # ------------------------------------------------------------
 
-Testing/
-.cache/
+/build/legacy/
+
+
+# ------------------------------------------------------------
+# 10. Auto-Downloaded Build Tools
+# ------------------------------------------------------------
+
+/build/tools/
+
+
+# ------------------------------------------------------------
+# 11. Preserve Bundled Premake
+# ------------------------------------------------------------
+
+!/thirdparty/Premake/bin/premake5.exe
 
 
 # ============================================================
 # INTENTIONALLY TRACKED
 # ============================================================
+
+# src/
+# tests/
+# docs/
 #
-# proj/vs/
-#     Pinaka.sln
-#     *.vcxproj
-#     *.vcxproj.filters
+# build/launcher/
+# build/setup/
+# build/scripts/
+# build/premake/
 #
-# build/
+# .vscode/
+# ide/vscode/
 #
-# thirdparty/
+# .gitmodules
+# thirdparty/GLFW/glfw (Git submodule)
+# thirdparty/Premake/
 #
-# Source files (.h/.hpp/.cpp)
-#
-# Premake scripts
-#
+# ============================================================
+# PINAKA ENGINE | END
 # ============================================================

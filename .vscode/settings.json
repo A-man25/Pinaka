@@ -1,0 +1,19 @@
+{
+  "C_Cpp.default.cppStandard": "c++20",
+  "C_Cpp.errorSquiggles": "enabled",
+  "files.associations": {
+    "*.inl": "cpp"
+  },
+  "files.exclude": {
+    "**/.vs": true,
+    "**/build/obj": true
+  },
+  "search.exclude": {
+    "**/build/bin": true,
+    "**/build/obj": true,
+    "**/proj": true,
+    "**/thirdparty/GLFW/glfw": true
+  },
+  "editor.formatOnSave": false,
+  "files.eol": "auto"
+}

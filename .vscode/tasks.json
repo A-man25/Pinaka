@@ -1,0 +1,310 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PINAKA: Setup Dependencies",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "setup"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "setup"
+        ]
+      },
+      "problemMatcher": [],
+      "detail": "Initialize GLFW and check Windows build tools / macOS Premake."
+    },
+    {
+      "label": "PINAKA: Generate VS2022 / macOS Makefiles",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "generate",
+        "vs2022"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "generate"
+        ]
+      },
+      "problemMatcher": [],
+      "detail": "Premake generation; on macOS uses gmake2."
+    },
+    {
+      "label": "PINAKA: Generate VS2026 / macOS Makefiles",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "generate",
+        "vs2026"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "generate"
+        ]
+      },
+      "problemMatcher": [],
+      "detail": "Windows requires a Premake build that supports vs2026."
+    },
+    {
+      "label": "PINAKA: Build Debug",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "build",
+        "debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "build",
+          "debug"
+        ]
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Build the complete PINAKA solution via the existing launcher."
+    },
+    {
+      "label": "PINAKA: Build Release",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "build",
+        "release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "build",
+          "release"
+        ]
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "PINAKA: Run Studio Debug",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "run",
+        "debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "run",
+          "debug"
+        ]
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PINAKA: Run Studio Release",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "run",
+        "release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "run",
+          "release"
+        ]
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PINAKA: Build & Run Debug",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "buildrun",
+        "debug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "buildrun",
+          "debug"
+        ]
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "PINAKA: Build & Run Release",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "buildrun",
+        "release"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "buildrun",
+          "release"
+        ]
+      },
+      "problemMatcher": [
+        "$msCompile"
+      ]
+    },
+    {
+      "label": "PINAKA: Diagnostics",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "diagnose"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "${workspaceFolder}/build/launcher/LaunchPinaka.command",
+          "diagnose"
+        ]
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PINAKA: Clean Generated Outputs",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/build/launcher/PinakaLauncher.ps1",
+        "clean"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "osx": {
+        "command": "/bin/bash",
+        "args": [
+          "-c",
+          "printf '%s\\n' '[PINAKA] Clean task is not implemented by the macOS launcher. Nothing removed.'; exit 1"
+        ]
+      },
+      "problemMatcher": [],
+      "detail": "Windows only: removes generated solutions, objects, and binaries; preserves source."
+    },
+    {
+      "label": "PINAKA: Rebuild Debug",
+      "dependsOn": [
+        "PINAKA: Clean Generated Outputs",
+        "PINAKA: Build Debug"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": [],
+      "detail": "Windows: clean generated outputs, regenerate if needed, and build Debug."
+    }
+  ]
+}
