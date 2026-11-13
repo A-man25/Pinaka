@@ -25,6 +25,10 @@ namespace pke
 		double getLength() const;
 		double getWidth() const;
 		unsigned int getPointCount() const;
+		Point2D getVerticalMinExtent() const;
+		Point2D getVerticalMaxExtent() const;
+		Point2D getHorizontalMinExtent() const;
+		Point2D getHorizontalMaxExtent() const;
 
 	private:
 		Point2DList m_pointList;

@@ -9,7 +9,7 @@
  * Copyright (c) 2026 Aman Rajesh Choudhari
  * All rights reserved.
  *------------------------------------------------------------------------*/
-
+#pragma once
 #include <Pinaka/Core/Core.h>
 
 namespace pke
