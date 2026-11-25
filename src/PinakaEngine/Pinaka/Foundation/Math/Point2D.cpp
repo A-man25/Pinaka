@@ -57,6 +57,11 @@ namespace pke
 		return *this;
 	}
 
+	Vector2D Point2D::operator - (const Point2D& other)
+	{
+		return Vector2D(m_x - other.m_x, m_y - other.m_y);
+	}
+
 	double Point2D::x() const
 	{
 		return m_x;

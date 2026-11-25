@@ -14,13 +14,15 @@
 #include <Pinaka/Core/Core.h>
 #include <Pinaka/Core/PinakaEngineInc.h>
 #include "GeomEntity.h"
+#include "Vector2D.h"
+
+class Vector2D;
 
 namespace pke
 {
-	class Point2D : public GeomEntity
+	class PK_API Point2D : public GeomEntity
 	{
 	public:
-
 		Point2D();
 		Point2D(double x, double y);
 		Point2D(std::initializer_list<double> list);
@@ -28,6 +30,7 @@ namespace pke
 		Point2D(Point2D&& other);
 		Point2D& operator = (const Point2D& other);
 		Point2D& operator = (Point2D&& other);
+		Vector2D operator - (const Point2D& other);
 		double x() const;
 		double y() const;
 		void setX(double x);

@@ -17,8 +17,8 @@
 
 namespace pke
 {
-	class Point3D : public GeomEntity
-	{      
+	class PK_API Point3D : public GeomEntity
+	{
 	public:
 
 		Point3D();

@@ -19,8 +19,9 @@ typedef std::vector<pke::Point2D> Point2DList;
 
 namespace pke
 {
-	class Boundry : public GeomEntity
+	class PK_API Boundry : public GeomEntity
 	{
+	public:
 		Boundry(Point2DList inputPointList);
 		double getLength() const;
 		double getWidth() const;
@@ -29,10 +30,19 @@ namespace pke
 		Point2D getVerticalMaxExtent() const;
 		Point2D getHorizontalMinExtent() const;
 		Point2D getHorizontalMaxExtent() const;
+		long entId() const;
+		Geom_Entity_type getEntityType();
+
+	private:
+		double getMininumValue(const std::vector<double>& inputList);
 
 	private:
 		Point2DList m_pointList;
 		double m_length;
 		double m_width;
+		double m_lowerX;
+		double m_upperX;
+		double m_lowerY;
+		double m_upperY;
 	};
 }

@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------
  * Project     : PinakaEngine
  * File        : Vector2D.cpp
- * Description : Geometric Entity : Vector Header
+ * Description : Vector Header
  * Author      : Aman Rajesh Choudhari
  * Created On  : 12/11/2026
  *
@@ -12,6 +12,7 @@
 
 #include <Pinaka/Core/PinakaEngineInc.h>
 #include "GeomEntity.h"
+#include "MathConstants.h"
 #include "Point2D.h"
 
 #pragma once
@@ -22,7 +23,7 @@ namespace pke
 {
     class Point2D;
 
-    class Vector2D : public GeomEntity
+    class PK_API Vector2D
     {
     public:
 
@@ -33,7 +34,7 @@ namespace pke
         /*
          * - Creates a zero vector (0, 0).
          */
-        Vector2D();
+        Vector2D() = default;
 
         /*
          * - Creates a vector using X and Y components.
@@ -98,6 +99,7 @@ namespace pke
          * - Returns the difference vector.
          * - Does not modify either operand.
          * - Example: (5, 4) - (2, 1) = (3, 3).
+         * - What vector should I add to B to reach A?
          */
         Vector2D operator-(const Vector2D& other) const;
 
@@ -120,7 +122,7 @@ namespace pke
         /*
          * - Divides both components by a scalar.
          * - Returns a new scaled vector.
-         * - Division by zero must be handled.
+         * - Throws std::invalid_argument when scalar is zero.
          */
         Vector2D operator/(double scalar) const;
 
@@ -149,7 +151,7 @@ namespace pke
          * - Divides the current vector by a scalar.
          * - Modifies the current vector.
          * - Returns a reference to the current vector.
-         * - Division by zero must be handled.
+         * - Throws std::invalid_argument when scalar is zero.
          */
         Vector2D& operator/=(double scalar);
 
@@ -177,18 +179,12 @@ namespace pke
          */
         bool isApproximatelyEqualTo(
             const Vector2D& other,
-            double tolerance = 1e-9) const;
+            double tolerance = PKE_EPSILON) const;
 
 
         // ============================================================
         // ENTITY PROPERTIES
         // ============================================================
-
-        /*
-         * - Returns the geometry entity type.
-         * - Identifies this entity as a 2D vector.
-         */
-        Geom_Entity_type getEntityType() const override;
 
         /*
          * - Returns the X component of the vector.
@@ -245,7 +241,7 @@ namespace pke
          * - Preserves direction and sets magnitude to 1.
          * - Returns a new vector.
          * - Does not modify the original vector.
-         * - Zero-length vectors require special handling.
+         * - A zero vector normalizes to a zero vector.
          */
         Vector2D normalize() const;
 
@@ -262,7 +258,7 @@ namespace pke
          * - Returns the component along the specified axis.
          * - Useful for directional movement and geometry.
          * - Does not modify either vector.
-         * - The projection axis must be non-zero.
+         * - Throws std::invalid_argument if the projection axis is zero.
          */
         Vector2D projectOnto(const Vector2D& axis) const;
 
@@ -270,6 +266,11 @@ namespace pke
         // ============================================================
         // SPATIAL RELATIONSHIPS
         // ============================================================
+
+
+        /* The dot product tells you how much two vectors
+         * are working in the same direction, taking their magnitudes into account.
+         */
 
         /*
          * - Calculates the dot product of two vectors.
@@ -297,7 +298,7 @@ namespace pke
          * - Calculates the angle between two vectors.
          * - Returns the unsigned angle in radians.
          * - Result lies between 0 and PI.
-         * - Requires both vectors to be non-zero.
+         * - Requires both vectors to be non-zero; otherwise throws std::invalid_argument.
          */
         double angleTo(const Vector2D& other) const;
 

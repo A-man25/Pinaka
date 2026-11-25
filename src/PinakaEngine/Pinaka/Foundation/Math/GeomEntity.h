@@ -26,7 +26,7 @@ namespace pke
 
 	};
 
-	class GeomEntity
+	class PK_API GeomEntity
 	{
 	public:
 		virtual long entId() const = 0;
