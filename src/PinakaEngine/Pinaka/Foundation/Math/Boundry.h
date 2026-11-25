@@ -23,26 +23,29 @@ namespace pke
 	{
 	public:
 		Boundry(Point2DList inputPointList);
-		double getLength() const;
-		double getWidth() const;
-		unsigned int getPointCount() const;
 		Point2D getVerticalMinExtent() const;
 		Point2D getVerticalMaxExtent() const;
 		Point2D getHorizontalMinExtent() const;
 		Point2D getHorizontalMaxExtent() const;
-		long entId() const;
-		Geom_Entity_type getEntityType();
+		double getLength() const;
+		double getWidth() const;
+		unsigned int getPointCount() const;
+		long entId() const override;
+		Geom_Entity_type getEntityType() const override;
 
 	private:
+		void registerExtents(Point2DList inputPointList);
 		double getMininumValue(const std::vector<double>& inputList);
+		void processDimensions();
 
 	private:
 		Point2DList m_pointList;
 		double m_length;
 		double m_width;
-		double m_lowerX;
-		double m_upperX;
-		double m_lowerY;
-		double m_upperY;
+
+		Point2D m_lowerX;
+		Point2D m_upperX;
+		Point2D m_lowerY;
+		Point2D m_upperY;
 	};
 }
