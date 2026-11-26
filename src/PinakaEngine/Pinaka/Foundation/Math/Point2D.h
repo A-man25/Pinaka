@@ -31,6 +31,9 @@ namespace pke
 		Point2D& operator = (const Point2D& other);
 		Point2D& operator = (Point2D&& other);
 		Vector2D operator - (const Point2D& other);
+		Vector2D operator - (const Point2D& other) const;
+		bool operator == (const Point2D& other) const;
+		bool operator != (const Point2D& other) const;
 		double x() const;
 		double y() const;
 		void setX(double x);

@@ -16,6 +16,7 @@ private:
 	void runPoint3DTest();
 	void runVector2DTest();
 	void runVector3DTest();
+	void runConvexHull2DTest();
 	void runSmartPointerTest();
 	void runAllTests();
 };

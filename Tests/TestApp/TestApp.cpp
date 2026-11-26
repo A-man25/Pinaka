@@ -5,7 +5,11 @@
 #include <Pinaka/Foundation/Math/Point3D.h>
 #include <Pinaka/Foundation/Math/Vector2D.h>
 #include <Pinaka/Foundation/Math/Vector3D.h>
+#include <Pinaka/Foundation/Math/ConvexHull2D.h>
+#include <Pinaka/Foundation/Math/MathConstants.h>
 
+#include <cmath>
+#include <algorithm>
 #include <iomanip>
 #include <iostream>
 #include <limits>
@@ -195,6 +199,74 @@ void TestApp::runVector3DTest()
     pause();
 }
 
+void TestApp::runConvexHull2DTest()
+{
+    printHeader("CONVEX HULL 2D");
+
+    const Point2DList inputPoints
+    {
+        pke::Point2D(-4.0, -1.0),
+        pke::Point2D(-1.0, -5.0),
+        pke::Point2D(5.0, -2.0),
+        pke::Point2D(2.0, 6.0),
+        pke::Point2D(0.0, 0.0),
+        pke::Point2D(-2.5, -3.0),
+        pke::Point2D(3.5, 2.0)
+    };
+
+    const pke::ConvexHull2D hull(inputPoints);
+    const Point2DList& hullPoints = hull.getHullPoints();
+
+    std::cout << "\nInput points (" << inputPoints.size() << "):";
+    for (const pke::Point2D& point : inputPoints)
+    {
+        std::cout << "\n  (" << point.x() << ", " << point.y() << ")";
+    }
+
+    std::cout << "\n\nHull vertices (anticlockwise, " << hullPoints.size() << "):";
+    double twiceSignedArea = 0.0;
+    for (std::size_t i = 0; i < hullPoints.size(); ++i)
+    {
+        const pke::Point2D& current = hullPoints[i];
+        const pke::Point2D& next = hullPoints[(i + 1) % hullPoints.size()];
+        std::cout << "\n  (" << current.x() << ", " << current.y() << ")";
+        twiceSignedArea += current.x() * next.y() - next.x() * current.y();
+    }
+    std::cout << '\n';
+
+    const Point2DList expectedCorners
+    {
+        pke::Point2D(-4.0, -1.0),
+        pke::Point2D(-1.0, -5.0),
+        pke::Point2D(5.0, -2.0),
+        pke::Point2D(2.0, 6.0)
+    };
+
+    bool containsEveryExpectedCorner = true;
+    for (const pke::Point2D& expected : expectedCorners)
+    {
+        bool found = false;
+        for (const pke::Point2D& actual : hullPoints)
+        {
+            if (actual == expected)
+            {
+                found = true;
+                break;
+            }
+        }
+        containsEveryExpectedCorner = containsEveryExpectedCorner && found;
+    }
+
+    printPass("Hull has exactly four vertices", hull.getPointCount() == 4);
+    printPass("All outer corners are included", containsEveryExpectedCorner);
+    printPass("Hull winding is anticlockwise", twiceSignedArea > 0.0);
+    printPass("Interior point is excluded", std::find(hullPoints.begin(), hullPoints.end(), pke::Point2D(0.0, 0.0)) == hullPoints.end());
+    printPass("Axis-aligned length is 9", std::fabs(hull.getLength() - 9.0) < PKE_EPSILON);
+    printPass("Axis-aligned width is 11", std::fabs(hull.getWidth() - 11.0) < PKE_EPSILON);
+
+    pause();
+}
+
 void TestApp::runSmartPointerTest()
 {
     printHeader("SMART POINTERS");
@@ -220,6 +292,7 @@ void TestApp::runAllTests()
     runPoint3DTest();
     runVector2DTest();
     runVector3DTest();
+    runConvexHull2DTest();
     runSmartPointerTest();
 }
 
@@ -236,8 +309,9 @@ void TestApp::run()
             << "  4. Point 3D\n"
             << "  5. Vector 2D\n"
             << "  6. Vector 3D\n"
-            << "  7. Smart Pointers\n"
-            << "  8. Run Every Test\n"
+            << "  7. Convex Hull 2D\n"
+            << "  8. Smart Pointers\n"
+            << "  9. Run Every Test\n"
             << "  0. Exit\n"
             << "+----------------------------------------------------------+\n"
             << "Selection: ";
@@ -260,8 +334,9 @@ void TestApp::run()
         case 4: runPoint3DTest(); break;
         case 5: runVector2DTest(); break;
         case 6: runVector3DTest(); break;
-        case 7: runSmartPointerTest(); break;
-        case 8: runAllTests(); break;
+        case 7: runConvexHull2DTest(); break;
+        case 8: runSmartPointerTest(); break;
+        case 9: runAllTests(); break;
         case 0: running = false; break;
         default:
             std::cout << "\nUnknown selection. Please choose a menu option.\n";
